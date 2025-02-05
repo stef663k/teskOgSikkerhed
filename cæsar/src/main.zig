@@ -6,13 +6,21 @@ pub fn main() !void {
     defer std.process.argsFree(allocator, args);
 
     if (args.len < 3) {
-        std.debug.print("Usage: {s} <text> <shift>\n", .{args[0]});
+        std.debug.print("Usage: {s} <text> <shift> OR {s} <text> -b\n", .{ args[0], args[0] });
         return;
     }
 
-    const encrypted = try caesar(allocator, args[1], try std.fmt.parseInt(i8, args[2], 10));
-    defer allocator.free(encrypted);
-    std.debug.print("Encrypted: {s}\n", .{encrypted});
+    const text = args[1];
+    const shift_arg = args[2];
+
+    if (std.mem.eql(u8, shift_arg, "-b")) {
+        try brute_force(allocator, text);
+    } else {
+        const shift = try std.fmt.parseInt(i8, shift_arg, 10);
+        const encrypted = try caesar(allocator, text, shift);
+        defer allocator.free(encrypted);
+        std.debug.print("Encrypted: {s}\n", .{encrypted});
+    }
 }
 
 fn caesar(allocator: std.mem.Allocator, input: []const u8, shift: i8) ![]const u8 {
@@ -31,6 +39,15 @@ fn caesar(allocator: std.mem.Allocator, input: []const u8, shift: i8) ![]const u
         }
     }
     return result;
+}
+
+fn brute_force(allocator: std.mem.Allocator, encrypted: []const u8) !void {
+    std.debug.print("\nBrute-forcing '{s}':\n", .{encrypted});
+    for (1..26) |shift| {
+        const decrypted = try caesar(allocator, encrypted, -@as(i8, @intCast(shift)));
+        defer allocator.free(decrypted);
+        std.debug.print("Shift {d: >2}: {s}\n", .{ shift, decrypted });
+    }
 }
 
 test "caesar cipher basic" {
