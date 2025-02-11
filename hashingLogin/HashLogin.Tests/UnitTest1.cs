@@ -66,13 +66,11 @@ public class UnitTest1 : IDisposable
         string username = "testuser";
         string password = "TestPass123!";
         
-        // Create user with correct format
         string hash = Hashing.ComputeHash(password);
         File.WriteAllText(testFile, $"{username}:{hash}");
         
-        // Temporary debug in test:
         Console.WriteLine($"Generated Hash: {hash}");
-        // Should output: "salt|hash" where both are base64
+      
         
         // Act
         bool result = File.ReadLines(testFile)
