@@ -8,13 +8,12 @@ namespace HashLogin.Models;
 
 public class User
 {
-    public int userid { get; set; }
-    public string Username { get; set; } = string.Empty;
-    public string PasswordHash { get; set; } = string.Empty;
+    public string Username { get; }
+    public string PasswordHash { get; }
 
     public User(string username, string password)
     {
-        Username = username;
-        PasswordHash = Hashing.ComputeHash(password);
+        Username = username.Trim().ToLowerInvariant();
+        PasswordHash = Hashing.ComputeHash(password.Trim());
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HashLogin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+289ce5863585d712c7402a4e76728e741bd426a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+123e920fa064b02e4349135fdad96fd4b9295d0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HashLogin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HashLogin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
