@@ -69,7 +69,6 @@ fn load_word_list(allocator: Allocator) !void {
         const word = word_ptr.*;
         for (word) |char| {
             _ = char;
-            // Use 'char' which is of type u8
         }
     }
 }
@@ -161,7 +160,6 @@ fn brute_force(allocator: Allocator, text: []const u8) !BruteForceResult {
     var best_shift: i32 = 0;
     var best_score: u32 = 0;
 
-    // Check all possible shifts (0-25)
     for (0..26) |shift| {
         const decrypted = try caesar(allocator, text, @as(i32, @intCast(shift)));
         defer allocator.free(decrypted);
@@ -173,7 +171,6 @@ fn brute_force(allocator: Allocator, text: []const u8) !BruteForceResult {
         }
     }
 
-    // Recreate the best decryption
     const best_text = try caesar(allocator, text, -best_shift);
     return BruteForceResult{
         .shift = best_shift,
@@ -254,9 +251,9 @@ fn decrypt(allocator: Allocator, text: []const u8, shift: u8) ![]u8 {
     for (text, 0..) |char, i| {
         if (std.ascii.isAlphabetic(char)) {
             const base: u8 = if (std.ascii.isUpper(char))
-                @as(u8, 'A') // Explicit cast
+                @as(u8, 'A')
             else
-                @as(u8, 'a'); // Explicit cast
+                @as(u8, 'a');
 
             const offset = (char -% base);
             const shifted = (offset +% (26 -% shift)) % 26;
@@ -294,7 +291,6 @@ pub fn main() !void {
     const is_vigenere_mode = std.mem.eql(u8, args[1], "-v");
 
     if (is_string_mode) {
-        // String mode handling
         if (args.len < 4) {
             std.debug.print("String mode requires: -s <text> <shift> [-b]\n", .{});
             return;
@@ -331,7 +327,6 @@ pub fn main() !void {
         defer allocator_gpa.free(transformed);
         try stdout.print("{s}\n", .{transformed});
     } else {
-        // Original file mode handling
         if (args.len < 4) {
             std.debug.print("File mode requires: <input> <output> <shift> OR <input> <output> -b\n", .{});
             return;
@@ -431,7 +426,6 @@ test "caesar wrap around" {
     defer allocator.free(encrypted);
     try std.testing.expectEqualStrings("cheud", encrypted);
 }
-// This test is failing because shift is wrong
 test "Known Shift Validation" {
     const allocator = std.testing.allocator;
     const encrypted = try caesar(allocator, "Hello world", 13);

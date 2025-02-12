@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mZzgo/UQYGs=",
+  "dgSpecHash": "KjEMiDvdFR8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin.Tests\\HashLogin.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin.Tests\\HashLogin.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stefan\\.nuget\\packages\\microsoft.codecoverage\\17.9.0\\microsoft.codecoverage.17.9.0.nupkg.sha512",
     "C:\\Users\\Stefan\\.nuget\\packages\\microsoft.net.test.sdk\\17.9.0\\microsoft.net.test.sdk.17.9.0.nupkg.sha512",

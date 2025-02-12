@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj": {}
+    "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj": {
+    "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj",
+        "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj",
         "projectName": "HashLogin",
-        "projectPath": "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj",
+        "projectPath": "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin\\HashLogin.csproj",
         "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stefan\\Desktop\\H5\\teskOgSikkerhed\\hashingLogin\\HashLogin\\obj\\",
+        "outputPath": "C:\\Users\\Stefan\\Desktop\\H5\\testOgSikkerhed\\hashingLogin\\HashLogin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
